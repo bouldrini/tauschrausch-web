@@ -1,0 +1,23 @@
+nav.navbar.navbar-default [role="navigation"]
+  .navbar-header
+    button.navbar-toggle.collapsed [type="button" data-toggle="collapse" data-target="#tauschrausch-navbar"]
+      span.sr-only
+        | Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    .navbar-brand
+      | TAUSCHRAUSCH
+  .collapse.navbar-collapse.navbar-right#tauschrausch-navbar
+    ul.nav.navbar-nav
+      li = link_to t('navigation.my_profile'), user_profile_path(current_user, current_user.full_name.parameterize)
+      li = link_to t('navigation.my_trade_items'), user_item_pool_path(current_user, current_user.full_name.parameterize)
+      li = link_to t('navigation.market'), market_path
+      li
+        = link_to user_notifications_path(current_user, current_user.full_name.parameterize) do
+          = fa_icon(:'envelope-o lg')
+          - if current_user.notifications.unread.present?
+            .badge.badge-notification
+              = current_user.notifications.unread.count
+
+      li = link_to t('navigation.sign_out'), destroy_user_session_path, method: :delete

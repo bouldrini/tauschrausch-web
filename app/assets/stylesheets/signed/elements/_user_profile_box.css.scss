@@ -1,0 +1,92 @@
+.user-profile-box{
+  padding:$line-height-computed/2;
+  color:$white;
+  min-height:300px;
+  .user-head{
+    margin-bottom:$line-height-computed/2;
+    a{
+      color:$yellow;
+    }
+  }
+  .user-followers{
+    .count{
+      margin-bottom:$line-height-computed/2;
+    }
+    a.follower{
+      height: 50px;
+      width: 50px;
+      border:1px solid $lightGrey;
+      margin-left:$line-height-computed/2;
+      margin-bottom:$line-height-computed/2;
+      float:left;
+      background-size: 100%;
+    }
+  }
+  .user-following{
+    .count{
+      margin-bottom:$line-height-computed/2;
+    }
+    a.followed{
+      height: 50px;
+      width: 50px;
+      border:1px solid $lightGrey;
+      margin-left:$line-height-computed/2;
+      margin-bottom:$line-height-computed/2;
+      float:left;
+      background-size: 100%;
+    }
+  }
+}
+
+.slide-out-profile-button{
+  position:fixed;
+  bottom:50%;
+  margin-bottom:-50px;
+  height:100px;
+  width:50px;
+  border-top-right-radius:50px;
+  border-bottom-right-radius:50px;
+  line-height:100px;
+  z-index:1000;
+  background-color:rgba($darkGreen, 0.8);
+  color:$white;
+  cursor:pointer;
+  .fa:first-child{
+    margin-left:15px;
+  }
+}
+
+.slide-in-profile-button{
+  position:absolute;
+  bottom:50%;
+  height:100px;
+  width:50px;
+  margin-bottom:-50px;
+  left:100%;
+  border-top-right-radius:50px;
+  border-bottom-right-radius:50px;
+  line-height:100px;
+  z-index:1000;
+  background-color:rgba($darkGreen, 0.8);
+  color:$white;
+  cursor:pointer;
+  .fa:first-child{
+    margin-left:15px;
+  }
+}
+
+.profile-slide-menu{
+  .menu{
+    position: absolute;
+    width:100%;
+    height:100%;
+    overflow:scroll;
+  }
+  position:fixed;
+  z-index:1000;
+  top:0;
+  width:70%;
+  height:100%;
+  left:-100%;
+  background-color:rgba($darkGreen, 0.8);
+}

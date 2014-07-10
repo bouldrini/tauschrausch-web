@@ -1,0 +1,7 @@
+- if @user == current_user
+  .row.page-actions
+    .col-sm-12
+      = link_to t('navigation.trade_item.new'), new_user_trade_item_path(current_user), class: 'btn btn-md btn-primary'
+.row
+  .col-sm-12
+    = render 'item_pool'

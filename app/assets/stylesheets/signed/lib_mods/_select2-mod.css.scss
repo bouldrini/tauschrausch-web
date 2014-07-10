@@ -1,0 +1,26 @@
+.chosen-container-multi{
+  .chosen-choices{
+    @include border-radius($line-height-computed/6);
+    padding:$line-height-computed/3;
+    line-height:$line-height-computed;
+    li.search-choice{
+      margin:0px;
+      margin-right: $line-height-computed/2;
+    }
+    li.search-field{
+      height:100%;
+      input[type='text']{
+        padding:$none;
+        height:100%;
+      }
+    }
+  }
+}
+
+.chosen-container-single {
+  .chosen-single{
+    padding:7px;
+    box-sizing:content-box;
+  }
+
+}

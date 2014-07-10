@@ -1,0 +1,13 @@
+de:
+  navigation:
+    uploaded_by: 'Eingestellt von'
+    current_login: 'Momentan eingeloggt als %{user}.'
+    sign_out: 'Ausloggen'
+    sign_in: 'Einloggen'
+    sign_up: 'Registrieren'
+    my_profile: 'Mein Profil'
+    my_trade_items: 'Warenpool'
+    market: 'Markt'
+    declare_interest: 'Interesse anmelden'
+    mark_interest: 'Markieren'
+    unmark_interest: 'Nicht mehr markieren'

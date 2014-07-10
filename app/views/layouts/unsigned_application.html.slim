@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+  title Tauschrausch
+  meta [name="description" content="TBD"]
+  meta [name="keywords" content="TBD"]
+  meta [name="robots" content="index, follow"]
+  meta [name="viewport" content="width=device-width, initial-scale=1.0"]
+  meta [http-equiv="content-type" content="text/html; charset=UTF-8"]
+  = stylesheet_link_tag    "unsigned/application", :media => "all"
+  = javascript_include_tag "unsigned/application"
+  = csrf_meta_tags
+  body
+    .container-fluid#nav-container
+      = render partial: 'unsigned/application/navigation_bar'
+    .container-fluid#app-container
+      .row
+        .col-xs-12
+          - if notice.present?
+            p.alert.alert-warning
+              = notice
+          - if alert.present?
+            p.alert.alert-danger
+              = alert
+        .col-xs-12
+          = yield
+    = render 'unsigned/application/footer'

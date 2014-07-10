@@ -1,0 +1,30 @@
+.item-box [style="background-image: url(#{item.item_images.first.image})" id=item.id]
+  .action-bar
+    -if item.user == current_user
+      = link_to fa_icon(:'trash-o'), user_trade_item_path(current_user, item), method: :delete, data: {confirm: t('delete_confirm')}, class: 'action'
+      = link_to fa_icon(:edit), edit_user_trade_item_path(current_user, item), class: 'action'
+    - if item.user == current_user
+      = "#{t('navigation.uploaded_by')}"
+      span.you
+        =< t('you')
+    -else
+      .uploaded-by
+        = "#{t('navigation.uploaded_by')} #{link_to item.user.full_name, user_item_pool_path(item.user, item.user.full_name.parameterize)}".html_safe
+      .distance
+        = "#{t('circa')} #{(current_user.distance_from([item.user.latitude,item.user.longitude]) * 1.6).to_i} km"
+  .item-info-box
+    .item-title
+      h4
+        = item.title
+    .item-description
+      .dotted
+        = item.description.html_safe
+      .links
+        - if @counter_value_selection.present?
+          = link_to t('navigation.trade_item.more_information'), user_trade_item_path(item.user, item)
+          .mark-interest[id=item.id]
+            = t('navigation.mark_interest')
+          .unmark-interest[id=item.id style='display:none;']
+            = t('navigation.unmark_interest')
+        - else
+          = link_to t('navigation.trade_item.more_information'), user_trade_item_path(item.user, item)

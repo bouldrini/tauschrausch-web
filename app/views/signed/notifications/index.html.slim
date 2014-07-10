@@ -1,0 +1,11 @@
+.notification-listing
+  - @notifications.each do |notification|
+    .row
+      .col-xs-12
+        div [class="notification #{notification.unread? ? 'unread' : ''}"]
+          = link_to user_notification_path(current_user, current_user.full_name.parameterize, notification) do
+            .notification-title
+              h4
+                = notification.title
+            .notification-received-at.offset-top
+              = notification.created_at.strftime("%d.%m.%Y %H:%M")

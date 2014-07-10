@@ -1,0 +1,21 @@
+= simple_form_for [current_user, @item] do |f|
+  .row
+    .col-sm-12
+      .row
+        .col-sm-12
+          = f.input :title
+      .row
+        .col-sm-12
+          = f.fields_for :item_images do |fgi|
+            = fgi.input :image, label:false, as: :file, input_html: {class: 'multi', name: 'item_images[]'}
+      .row
+        .col-sm-12
+          #gallery-wrapper
+
+      .row
+        .col-sm-12
+          = f.input :description, input_html: {class: 'editor'}
+      .row
+        .col-sm-12
+          .well.centered
+            = f.button :submit, class: 'btn btn-primary btn-md'

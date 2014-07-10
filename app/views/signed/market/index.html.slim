@@ -1,0 +1,10 @@
+.row
+  .col-md-12
+    = render 'trade_items', items: @items
+  .col-md-12
+    center
+      .loading
+javascript:
+  jQuery(function($){
+    endless_page($)
+  })

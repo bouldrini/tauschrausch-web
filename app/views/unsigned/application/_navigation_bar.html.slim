@@ -1,0 +1,15 @@
+nav.navbar.navbar-default [role="navigation"]
+  .navbar-header
+    button.navbar-toggle.collapsed [type="button" data-toggle="collapse" data-target="#tauschrausch-navbar"]
+      span.sr-only
+        | Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+    .navbar-brand
+      | TAUSCHRAUSCH
+  .collapse.navbar-collapse.navbar-right#tauschrausch-navbar
+    ul.nav.navbar-nav
+      li = link_to t('navigation.home'), home_path
+      li = link_to t('navigation.sign_up'), registration_path
+      li = link_to t('navigation.sign_in'), login_path

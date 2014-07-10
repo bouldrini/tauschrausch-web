@@ -1,0 +1,21 @@
+.image-upload{
+  padding:$line-height-computed/3;
+  @include border-radius($line-height-computed/6);
+  .image-upload-input-thumb{
+    width:100%;
+  }
+  .delete-checkbox{
+    margin-top:$line-height-computed/3;
+    margin-right:$line-height-computed/4;
+  }
+  .image_upload{
+    margin-top:$line-height-computed/3;
+  }
+
+}
+
+.checkbox{
+  input[type='checkbox']{
+    margin:$none;
+  }
+}

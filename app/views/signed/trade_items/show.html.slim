@@ -1,0 +1,23 @@
+.row
+  .col-md-2
+    .row.select-image-row
+      - @item.item_images.each do |image|
+        .select-image [style="background-image: url(#{image.image})" data-src="#{image.image}"]
+  .col-md-10
+    .row
+      .col-md-6
+        = image_tag @item.item_images.first.image, class: 'show-image'
+        / .show-image [style="background-image: url(#{@item.item_images.first.image})"]
+      .col-md-6
+        .row
+          .col-xs-12
+            .box-background.inset
+              h4
+                = @item.title
+              = @item.description.html_safe
+        .row
+          .col-xs-12
+            .offset-top
+              .box-background.inset
+                - unless current_user.is_interested_in?(@item)
+                  = link_to t('navigation.declare_interest'), user_trade_item_request_for_trade_path(current_user, @item), method: :post

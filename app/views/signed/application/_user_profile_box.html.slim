@@ -1,0 +1,40 @@
+.user-profile-box
+  .user-head
+    .row
+      .col-xs-6
+        = image_tag user.image, style: 'width:100%'
+      .col-xs-6
+        .row
+          .col-xs-12
+            = user.full_name
+          - if user == current_user
+            .col-xs-12
+              = link_to t('navigation.my_profile'), user_profile_path(user, user.full_name.parameterize)
+          - else
+            .col-xs-12
+              - if current_user.is_following?(user)
+                = link_to t('stop_observing'), user_follow_path(@user, :unfollow), method: :post
+              - else
+                = link_to t('observe'), user_follow_path(@user, :follow), method: :post
+  / .user-followers
+  /   .row
+  /     .col-xs-12
+  /       .count
+  /         - if user == current_user
+  /           = t('following_you', count: user.followers.count)
+  /         - else
+  /           = t('is_following', user: user.full_name, count: user.followers.count)
+  /   .row
+  /     - user.followers.limit(9).each do |follower|
+  /       = link_to '', user_item_pool_path(follower.following_user, follower.following_user.full_name.parameterize), class: 'follower', style: "background-image: url(#{follower.following_user.image})"
+  .user-following
+    .row
+      .col-xs-12
+        .count
+          - if user == current_user
+              = t('you_are_following', count: user.following.count)
+          - else
+            = t('is_followed_by', user: user.full_name, count: user.following.count)
+    .row
+      - user.following.limit(9).each do |followed|
+        = link_to '', user_item_pool_path(followed.followed_user, followed.followed_user.full_name.parameterize), class: 'followed', style: "background-image: url(#{followed.followed_user.image})"

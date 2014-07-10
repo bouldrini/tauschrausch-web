@@ -1,0 +1,18 @@
+- rh = Rails.application.routes.url_helpers
+.row
+  .col-xs-12
+    h4
+      = t('trade_notifications.selection.notification_title', user: trade.requesting_user.full_name)
+hr
+- trade.counter_value.trade_items.each do |item|
+  .row.offset-bottom
+    .col-xs-4
+      = image_tag item.item_images.first.image, style: 'width:100%'
+    .col-xs-8
+      h4
+        = item.title
+      = item.description.html_safe
+hr
+.row
+  .col-xs-12
+    | links

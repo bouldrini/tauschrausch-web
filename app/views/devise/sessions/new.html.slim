@@ -1,0 +1,13 @@
+.row
+  .col-sm-6.col-sm-offset-3
+    h2
+      | Einloggen
+
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  .row
+    .col-sm-8.col-sm-offset-2
+      = f.input :email, required: false
+      = f.input :password, required: false
+      = f.input :remember_me, as: :boolean, wrapper: :inline_checkbox if devise_mapping.rememberable?
+      .well.centered
+        = f.button :submit, t('sign_in'), class: 'btn btn-md btn-primary'

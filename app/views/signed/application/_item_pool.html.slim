@@ -1,0 +1,10 @@
+- @items.in_groups_of(2, false).each do |row|
+  .row.item-row
+    - for item in row
+      .col-sm-6
+        = render 'item_box', item: item
+- if @counter_value_selection.present?
+  = simple_form_for [current_user, @trade] do |f|
+    = f.simple_fields_for :counter_value do |cv|
+      = cv.input :trade_items, as: :hidden, input_html: {name: 'trade[counter_value][trade_items][]'}
+    = f.button :submit, class: 'btn btn-primary'

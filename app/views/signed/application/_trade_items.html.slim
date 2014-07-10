@@ -1,0 +1,5 @@
+- @items.in_groups_of(2, false).each.with_index do |row|
+  .row.item-row
+    - for item in row
+      .col-sm-6
+        = render 'item_box', item: item

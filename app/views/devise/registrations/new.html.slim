@@ -1,0 +1,20 @@
+.row
+  .col-xs-12
+    h2
+      | Registrierung
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  .row
+    .col-sm-6
+      = f.input :gender, collection: User::GENDER.map{|option| [t(option), option]}, input_html: {class: 'chosen'}
+      = f.input :salutation, collection: User::SALUTATION.map{|option| [t(option), option]}, input_html: {class: 'chosen'}
+      = f.input :firstname
+      = f.input :lastname
+      = f.input :birthday, as: :string, input_html: {class: 'bootstrap-datepicker'}
+      = f.input :city
+    .col-sm-6
+      = f.input :image
+      = f.input :email
+      = f.input :password
+      = f.input :password_confirmation
+      .well.centered
+        = f.button :submit, t('sign_up'), class: 'btn btn-primary btn-md'

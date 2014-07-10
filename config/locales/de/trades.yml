@@ -1,0 +1,16 @@
+de:
+  activerecord:
+    models:
+      trade: Handel
+  trade_notifications:
+    new_request: 'Eine Neue Tauschanfrage von %{user}'
+    declared_interest: '%{user} hat interesse an einem ihrer Tauschgegenstände angemeldet!'
+    selection:
+      link: "Im Warenpool von %{user} stöbern"
+      notification_title: '%{user} hat einen Gegenwert für ihre Tauschanfrage vorgeschlagen!'
+    abort:
+      link: 'Tauschanfrage ablehnen'
+      notification_title: "Tauschanfrage auf den Gegenstand '%{trade_item}' abgelehnt"
+      notification_message: "%{user} hat deine Tauschanfrage auf den Gegenstand '%{trade_item}' abgelehnt."
+      already_aborted: 'Tauschanfrage ist bereits abgelehnt!'
+

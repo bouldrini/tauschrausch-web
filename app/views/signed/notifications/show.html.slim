@@ -1,0 +1,8 @@
+div [class="notification"]
+  .notification-title
+    h4
+      = @notification.title
+  .notification-message
+    = @notification.message.html_safe
+  .notification-received-at.offset-top
+    = @notification.created_at.strftime("%d.%m.%Y %H:%M")

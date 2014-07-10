@@ -1,0 +1,13 @@
+de:
+  activerecord:
+    models:
+      trade_item: 'Tauschgegenstand'
+    attributes:
+      trade_item:
+        title: 'Titel'
+        description: 'Beschreibung'
+        image: 'Bild'
+  navigation:
+    trade_item:
+      new: 'Neuer Tauschgegenstand'
+      more_information: 'Mehr lesen'

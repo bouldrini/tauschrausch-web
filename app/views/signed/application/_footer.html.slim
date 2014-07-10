@@ -1,0 +1,4 @@
+.footer.hidden-xs
+  #footer-container
+    .footer-inner
+      / = "#{t('navigation.current_login', user: current_user.full_name)} #{link_to t('navigation.sign_out'), destroy_user_session_path, method: :delete}".html_safe

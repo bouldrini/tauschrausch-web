@@ -1,0 +1,10 @@
+de:
+  activerecord:
+    models:
+      notification: Benachrichtigung
+    attributes:
+      notification:
+        receiver: 'Empfänger'
+        sender: 'Absender'
+        message: 'Nachricht'
+

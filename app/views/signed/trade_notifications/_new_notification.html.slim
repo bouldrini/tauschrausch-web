@@ -1,0 +1,19 @@
+- rh = Rails.application.routes.url_helpers
+.row
+  .col-xs-12
+    h4
+      = t('trade_notifications.declared_interest', user: trade.requesting_user.full_name)
+hr
+.row.offset-bottom
+  .col-xs-4
+    = image_tag trade.trade_item.item_images.first.image, style: 'width:100%'
+  .col-xs-8
+    h4
+      = trade.trade_item.title
+    = trade.trade_item.description.html_safe
+hr
+.row
+  .col-xs-12
+    = link_to t('trade_notifications.selection.link', user: trade.requesting_user.full_name), rh. user_trade_select_counter_value_path(trade.requesting_user, trade)
+    br
+    = link_to t('trade_notifications.abort.link'), rh.user_trade_abort_trade_path(notification.receiver, trade), method: :post
